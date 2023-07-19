@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>RESTFul Consumer - AngularJs</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="ctrl">
+
+    <div></div>
+  <script>
+    const app = angular.module("app",[])
+    app.controller('ctrl',function($scope,$http) {
+    let url = "http://localhost:8081/rest/categories/2"
+
+        $http({
+            method: 'get',
+            url: url
+          }).then(resp => {
+           
+            console.log("Success",resp.data)
+          }).catch(error=>{
+            console.log("Error",error)
+          });
+    })
+  </script>
+ 
+
+</body>
+</html>

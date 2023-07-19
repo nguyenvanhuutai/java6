@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav th:replace="~{/html_so6/security/_menu :: nav}"></nav>
+
+    <hr>
+    <i style="color: red;">[[${massage}]]</i>
+
+    <form action="/auth/login" method="post">
+
+        <input type="text" name="username" placeholder="UserName???" > <br>
+        <input type="text" name="password" placeholder="PassWord???" > <br>
+        <input type="checkbox" name="remember" id="">Remember Me? <br>
+
+        <button>Login</button>
+    </form>
+</body>
+</html>

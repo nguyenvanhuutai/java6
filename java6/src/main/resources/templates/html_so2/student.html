@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <hr>
+    <a th:href="@{|student?index=${n-1}|}">Prev</a>
+    [~[[${n+1}]]/5~]
+    <a th:href="@{|student?index=${n+1}|}">Next</a>   
+    <hr>
+    <ul>
+        <li>Name:[[${sv.name}]]</li>
+        <li>Gender:[[${sv.gender?'Name':'Nữ'}]]</li>
+        <li>Email:[[${sv.contact.email}]]</li>
+        <li>Marks:[[${sv.marks}]]</li>
+        <li>Result:[[${sv.marks > 5 ?'pass':'fail'}]]</li>
+    </ul>
+</body>
+</html>

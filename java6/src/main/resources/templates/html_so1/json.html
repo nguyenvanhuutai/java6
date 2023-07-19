@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        var sv ={
+            "name":"Nguyễn văn tèo",
+            "gender":true,
+            "marks":7.6,
+            "contact":{
+                "email":"teonv@gmail.com",
+                "phone":"0913457865"
+            },
+            "subjects":["WEB205","COM108"]
+        }
+        //xuất đối tượng json
+        console.log(sv)
+
+        //truy xuất thuộc tính
+        sv.name = sv['name'].toUpperCase();
+        console.log(sv.name,sv.contact.email,sv.subjects[0]);
+
+        //duyệt đối tượng quá key
+        for(var key in sv){
+            console.log(key,sv[key])
+        }
+
+        console.log("<hr>")
+        //chuyển đổi dạng json sang chuỗi
+        var text = JSON.stringify(sv)
+        console.log(text)
+
+        console.log("<hr>")
+         //chuyển đổi sang dạng json
+         var obj = JSON.parse(text)
+        console.log(obj)
+
+    </script>
+    
+</body>
+</html>

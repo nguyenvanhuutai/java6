@@ -1,0 +1,49 @@
+[
+    {
+        "name":"Nguyễn văn tèo",
+        "gender":true,
+        "marks":7.6,
+        "contact":{
+            "email":"teonv@gmail.com",
+            "phone":"0913457865"
+        },
+        "subjects":["COM108"]
+    },
+    {
+        "name":"Hương",
+        "gender":false,
+        "marks":5.6,
+        "contact":{
+            "email":"huong@gmail.com",
+            "phone":"0911111"
+        },
+        "subjects":["WEB2051","COM1085","IT17301"]
+    },{
+        "name":"Nguyễn văn 1",
+        "gender":true,
+        "marks":3.6,
+        "contact":{
+            "email":"teonv1@gmail.com",
+            "phone":"1111111111"
+        },
+        "subjects":["WEB20511","COM10811"]
+    },{
+        "name":"Nguyễn văn 2",
+        "gender":true,
+        "marks":6.6,
+        "contact":{
+            "email":"teonv2@gmail.com",
+            "phone":"2222222222"
+        },
+        "subjects":["WEB205","COM108"]
+    },{
+        "name":"Nguyễn văn 3",
+        "gender":true,
+        "marks":9.6,
+        "contact":{
+            "email":"teonv3@gmail.com",
+            "phone":"33333333"
+        },
+        "subjects":["WEB205","COM108"]
+    }
+]

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="/html_so3/layout/layout::dynamic(~{::body})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <form action="/student/save" method="post" th:object="${sv}" class="mt-5" style="width: 600px; margin: 0 auto; border: 1px solid rgb(193, 186, 186); padding: 15px; "> -->
+    <form action="/validation/validate" method="post" th:object="${sv}" class="mt-5" style="width: 600px; margin: 0 auto; border: 1px solid rgb(193, 186, 186); padding: 15px; ">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" th:field="*{email}"class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Full Name</label>
+            <input type="text" th:field="*{fullname}" class="form-control" id="exampleFormControlInput2" placeholder="Nguyễn Văn A">
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></div>
+        </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Average Marks</label>
+            <input type="text" th:field="*{marks}" class="form-control" id="exampleFormControlInput3" placeholder="10">
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('marks')}" th:errors="*{marks}"></div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" th:field="*{gender}" type="radio"  id="inlineRadio1"  value="true">
+                <label class="form-check-label" for="inlineRadio1">Nam</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" th:field="*{gender}" type="radio" id="inlineRadio2" value="false">
+                <label class="form-check-label" for="inlineRadio2">Nữ</label>
+              </div>
+              <div class="alert alert-warning" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput5" class="form-label">Quốc Tịch</label>
+            <select class="form-select" th:field="*{country}" aria-label="Default select example">
+                <option value="" selected>Mặc Định</option>
+                <option value="VN">Việt Nam</option>
+                <option value="US">United States</option>
+              </select>
+              <div class="alert alert-warning" th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></div>
+          </div>
+          <hr>
+          <button class="btn btn-primary">Validate</button>
+
+    </form>
+    
+</body>
+</html>

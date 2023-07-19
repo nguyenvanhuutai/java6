@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="/html_so3/layout/layout::dynamic(~{::ne})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container" style="width: 500px; margin: 0 auto;">
+        <h1>Kết quả</h1>
+        <hr>
+        <div th:fragment="ne">
+        <ul th:object="${sv}">
+            <li>Email Address: <b>[[*{email}]]</b></li>
+            <li>Full Name: <b>[[*{fullname}]]</b></li>
+            <li>Average Marks: <b>[[*{marks}]]</b></li>
+            <li>Gender: <b>[[*{gender}?'Nam':'Nữ']]</b></li>
+            <li>Country: <b>[[*{country}]]</b></li>
+        </ul>
+    </div>
+        
+    </div>
+
+    
+</body>
+</html>

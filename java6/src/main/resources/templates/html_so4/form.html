@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+
+
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="text"], input[type="radio"],select {
+      width: 200px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"], input[type="reset"] {
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+    
+    .action-buttons {
+      display: flex;
+    }
+    
+    .action-buttons button {
+      margin-right: 10px;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .action-buttons button:hover {
+      background-color: #45a049;
+    }
+    .edit-button, .delete-button {
+        border: none;
+        width: 50px;
+        background: linear-gradient(to right, #b92b27, #1565C0);
+        color: white;
+        padding: 4px;
+    }
+
+    .edit-button:hover, .delete-button:hover {
+        border: none;
+        width: 50px;
+        background: linear-gradient(to right, #1565C0, #b92b27);
+        color: white;
+        padding: 4px;
+        cursor: pointer;
+    }
+    body {
+      padding: 40px;
+    }
+    h1 {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    .gender-container {
+  display: flex;
+  align-items: center;
+}
+
+.gender-container label {
+  margin-left: 0px;
+}
+
+  </style>
+  <title>RESTFul Consumer - AngularJs</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+  <script src="demo-ctrl.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="ctrl">
+
+  <h1>RESTFul Consumer - AngularJs</h1>
+  <form>
+    <label for="email">Email:</label>
+    <input type="text" ng-model="form.email" id="email"  ><br><br>
+    
+    <label for="fullname">Full Name:</label>
+    <input type="text" ng-model="form.fullname" id="fullname"  ><br><br>
+    
+    <label for="marks">Marks:</label>
+    <input type="text" ng-model="form.marks" id="marks" ><br><br>
+    
+    <label>Gender:</label>
+    <div class="gender-container">
+      <input type="radio" id="male" ng-model="form.gender"  ng-value="true"  style="width: 25px; ">
+      <label for="male">Male</label>
+      <input type="radio" id="female" ng-model="form.gender"  ng-value="false"  style="width: 25px;">
+      <label for="female">Female</label>
+    </div>
+    
+   <br><br>
+    
+    <label for="country">Country:</label>
+    <select class="form-select" ng-model="form.country" aria-label="Default select example">
+      <option value="" selected>Mặc Định</option>
+      <option value="VN">Việt Nam</option>
+      <option value="US">United States</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <hr>
+    
+    <div class="action-buttons">
+      <button ng-click="create()" >Create</button>
+      <button ng-click="delete(key)" >Delete</button>
+      <button ng-click="update()" >Update</button>
+      <button ng-click="reset()" >Reset</button>
+    </div>
+  </form>
+  <!-- form -->
+  <table>
+    <thead>
+    <tr>
+      <th>Email</th>
+      <th>Full Name</th>
+      <th>Marks</th>
+      <th>Gender</th>
+      <th>Country</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(key,stu) in items"  >
+      <td>{{stu.email}}</td>
+      <td>{{stu.fullname}}</td>
+      <td>{{stu.marks}}</td>
+      <td>{{stu.gender?'Male':'Famale'}}</td>
+      <td>{{stu.country}}</td>
+      <td><button  class="edit-button" ng-click="edit(key)">Edit</button>
+        <button  class="delete-button" ng-click="delete(key)">Delete</button></td>
+    </tr>
+    
+  </tbody>
+  </table>
+
+</body>
+</html>
