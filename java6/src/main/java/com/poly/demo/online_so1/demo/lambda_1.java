@@ -26,6 +26,7 @@ public class lambda_1 {
     private static void demo1(){
         List<Integer> list = Arrays.asList(1,3,6,4,8,4);
         list.forEach(i -> System.out.println(i));
+
     }
     private static void demo2(){
         

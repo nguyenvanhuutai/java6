@@ -68,7 +68,20 @@ public class s2_AuthConfig extends WebSecurityConfigurerAdapter {
                     // .logoutSuccessUrl("/security/index") // ???ng d?n URL sau khi ??ng xu?t thành công
                     // .invalidateHttpSession(true) // Vô hi?u hóa phiên ??ng nh?p
                     // .deleteCookies("JSESSIONID")); // Xóa cookie JSESSIONID (n?u có)
+
+
+              // dang nhap bang mang xa hoi demo 7.6
+                http.oauth2Login()
+                .loginPage("/auth/login/form")
+                .defaultSuccessUrl("/auth/login/success",true)
+                .failureUrl("/auth/login/error")
+                .authorizationEndpoint()
+                        .baseUri("/oauth2/authorization");        
+                        
         }
+
+
+      
     
 
    
